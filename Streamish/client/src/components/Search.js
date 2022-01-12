@@ -28,6 +28,8 @@ export const InputCards = () => {
 
     return (
         <form id="wholeForm">
+            <br></br>
+            <h1>Search Videos</h1>
             <section className="contentMain">
                 <div className="inputForm">
                     <fieldset className="concept-field">
