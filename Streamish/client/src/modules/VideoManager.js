@@ -22,4 +22,13 @@ export const getWithComments = () => {
             "Content-Type": "application/json"
         }
     }).then((res) => res.json())
+};
+
+export const getBySearch = (q, isSort) => {
+  return fetch(baseUrl + `/search?q=${q}&sortDesc=${isSort}`, {
+      method: "GET",
+      headers: {
+          "Content-Type": "application/json"
+      }
+  }).then((res) => res.json())
 }
