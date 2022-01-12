@@ -21,7 +21,9 @@ const Video = ({ video }) => {
         </br>
         <h4>Comments</h4>
         <ul>
-        {video.comments.map(c => <li>{c.message} - Posted By: {c.userProfile.name}</li>)}
+        {video.comments != null ? (
+        video.comments.map(c => <li>{c.message} - Posted By: {c.userProfile.name}</li>)
+      ) : null}
         </ul>
       </CardBody>
     </Card>
