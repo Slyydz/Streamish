@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { getWithComments } from "../modules/VideoManager";
 import Video from "./Video";
 import { addVideo } from "../modules/VideoManager";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 export const VideoForm = (videosInput) => {
 
@@ -10,26 +11,26 @@ export const VideoForm = (videosInput) => {
     const [url, changeUrl] = useState("");
     const [videos, changeVideos] = useState([]);
 
+    const history = useHistory();
+
 
 
     const handleSubmit = (e) => {
         e.preventDefault();
-          
+
         let newVideo = {
-            Title : title,
-            Description : description,
-            Url : url
+            Title: title,
+            Description: description,
+            Url: url
         }
 
         addVideo(newVideo).then(() => {
-            getWithComments().then(response => {
-                changeVideos(response)
-            })
+            history.push("/")
         }
         )
 
         document.getElementById("wholeForm").reset();
-        
+
 
     }
 
@@ -63,12 +64,6 @@ export const VideoForm = (videosInput) => {
             </section>
 
             <button onClick={(e) => handleSubmit(e)}>Submit</button>
-            <br></br>
-
-            {videos.map((video) => (
-            console.log(video),
-          <Video video={video} key={video.id} />
-        ))}
         </form>
     )
 }

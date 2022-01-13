@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\willi\\workspace\\Streamish\\Streamish\\Streamish.csproj": {}
+    "C:\\Users\\willi\\workspace\\back-end\\Streamish\\Streamish\\Streamish.csproj": {}
   },
   "projects": {
-    "C:\\Users\\willi\\workspace\\Streamish\\Streamish\\Streamish.csproj": {
+    "C:\\Users\\willi\\workspace\\back-end\\Streamish\\Streamish\\Streamish.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\willi\\workspace\\Streamish\\Streamish\\Streamish.csproj",
+        "projectUniqueName": "C:\\Users\\willi\\workspace\\back-end\\Streamish\\Streamish\\Streamish.csproj",
         "projectName": "Streamish",
-        "projectPath": "C:\\Users\\willi\\workspace\\Streamish\\Streamish\\Streamish.csproj",
+        "projectPath": "C:\\Users\\willi\\workspace\\back-end\\Streamish\\Streamish\\Streamish.csproj",
         "packagesPath": "C:\\Users\\willi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\willi\\workspace\\Streamish\\Streamish\\obj\\",
+        "outputPath": "C:\\Users\\willi\\workspace\\back-end\\Streamish\\Streamish\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\willi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -67,7 +71,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }
