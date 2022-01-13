@@ -108,3 +108,4 @@ C:\Users\willi\workspace\back-end\Streamish\Streamish\obj\Debug\net5.0\Streamish
 C:\Users\willi\workspace\back-end\Streamish\Streamish\obj\Debug\net5.0\ref\Streamish.dll
 C:\Users\willi\workspace\back-end\Streamish\Streamish\obj\Debug\net5.0\Streamish.pdb
 C:\Users\willi\workspace\back-end\Streamish\Streamish\obj\Debug\net5.0\Streamish.genruntimeconfig.cache
+C:\Users\willi\workspace\back-end\Streamish\Streamish\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
