@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Streamish.Repositories;
 using Streamish.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Streamish.Controllers
 {
@@ -15,12 +16,14 @@ namespace Streamish.Controllers
             _videoRepository = videoRepository;
         }
 
+        [Authorize]
         [HttpGet]
         public IActionResult Get()
         {
             return Ok(_videoRepository.GetAll());
         }
 
+        //[Authorize]
         [HttpGet("GetWithComments")]
         public IActionResult GetWithComments()
         {
@@ -28,6 +31,7 @@ namespace Streamish.Controllers
             return Ok(videos);
         }
 
+        [Authorize]
         [HttpGet("GetVideoByIdWithComments/{id}")]
         public IActionResult GetVideoByIdWithComments(int id)
         {
@@ -35,18 +39,21 @@ namespace Streamish.Controllers
             return Ok(video);
         }
 
+        [Authorize]
         [HttpGet("search")]
         public IActionResult Search(string q, bool sortDesc)
         {
             return Ok(_videoRepository.Search(q, sortDesc));
         }
 
+        [Authorize]
         [HttpGet("hottest")]
         public IActionResult SearchByDate(string since)
         {
             return Ok(_videoRepository.SearchByDate(since));
         }
 
+        [Authorize]
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
@@ -58,6 +65,7 @@ namespace Streamish.Controllers
             return Ok(video);
         }
 
+        [Authorize]
         [HttpPost]
         public IActionResult Post(Video video)
         {
@@ -107,6 +115,7 @@ namespace Streamish.Controllers
             return CreatedAtAction("Get", new { id = video.Id }, video);
         }
 
+        [Authorize]
         [HttpPut("{id}")]
         public IActionResult Put(int id, Video video)
         {
@@ -119,6 +128,7 @@ namespace Streamish.Controllers
             return NoContent();
         }
 
+        [Authorize]
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
