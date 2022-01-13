@@ -1,5 +1,6 @@
 import React from "react";
 import { Card, CardBody } from "reactstrap";
+import { Link } from "react-router-dom";
 
 const Video = ({ video }) => {
   return (
@@ -21,10 +22,14 @@ const Video = ({ video }) => {
         </br>
         <h4>Comments</h4>
         <ul>
-        {video.comments != null ? (
-        video.comments.map(c => <li>{c.message} - Posted By: {c.userProfile.name}</li>)
-      ) : null}
+          {video.comments != null ? (
+            video.comments.map(c => <li>{c.message} - Posted By: {c.userProfile.name}</li>)
+          ) : null}
         </ul>
+        <br></br>
+        <Link to={`/videos/${video.id}`}>
+          <strong>{video.title}</strong>
+        </Link>
       </CardBody>
     </Card>
   );
