@@ -70,7 +70,17 @@ namespace Streamish.Tests.Mocks
 
         public List<Video> Search(string criterion, bool sortDescending)
         {
-            throw new NotImplementedException();
+            var actualList = new List<Video>();
+
+            foreach(Video video in _data)
+            {
+                if (video.Description.Contains(criterion) || video.Title.Contains(criterion))
+                {
+                    actualList.Add(video);
+                }
+            }
+
+            return actualList;
         }
 
         public List<Video> GetAllWithComments()

@@ -178,6 +178,32 @@ namespace Streamish.Tests
             var videoFromDb = repo.InternalData.FirstOrDefault(p => p.Id == testVideoId);
             Assert.Null(videoFromDb);
         }
+        [Fact]
+        public void Test_Video_Search()
+        {
+            var testData = CreateTestVideos(20);
+
+            var testingString = "Yea Buddy";
+            var testBool = true;
+
+            testData[5].Description = testingString;
+            testData[6].Description = testingString;
+
+            var testList = new List<Video>();
+
+            testList.Add(testData[5]);
+            testList.Add(testData[6]);
+
+            var repo = new InMemoryVideoRepository(testData);
+            var controller = new VideoController(repo);
+
+            var result = controller.Search(testingString, testBool);
+
+            var OkResult = Assert.IsType<OkObjectResult>(result);
+            var actualProfile = Assert.IsType<List<Video>>(OkResult.Value);
+
+            Assert.Equal(actualProfile, testList);
+        }
 
         private List<Video> CreateTestVideos(int count)
         {
