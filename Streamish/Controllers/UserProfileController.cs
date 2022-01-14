@@ -20,6 +20,18 @@ namespace Streamish.Controllers
         }
 
         [Authorize]
+        [HttpGet]
+        public IActionResult Get()
+        {
+            List<UserProfile> up = _upRepo.Get();
+            if (up == null)
+            {
+                return NotFound();
+            }
+            return Ok(up);
+        }
+
+        [Authorize]
         [HttpGet("GetByIdWithVideos")]
         public IActionResult GetByIdWithVideos(int id)
         {
@@ -60,6 +72,14 @@ namespace Streamish.Controllers
             _upRepo.Add(userProfile);
             return CreatedAtAction(
                 nameof(GetByFireBaseUserId), new { firebaseUserId = userProfile.FirebaseUserId }, userProfile);
+        }
+
+        [HttpDelete]
+        public IActionResult Delete(int id)
+        {
+            _upRepo.DeleteUser(id);
+
+            return NoContent();
         }
     }
 }
